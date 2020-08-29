@@ -1,2 +1,7 @@
-# pp-jesus-librado-back
-Repository created as part of a recruiting test
+# Backend
+
+```
+git clone https://github.com/JesusLibrado/pp-jesus-librado-back.git
+cd pp-jesus-librado-back
+npm install
+```

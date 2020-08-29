@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for a basic webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesusLibrado/pp-jesus-librado-back.git"
+  },
+  "author": "JesusLibrado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesusLibrado/pp-jesus-librado-back/issues"
+  },
+  "homepage": "https://github.com/JesusLibrado/pp-jesus-librado-back#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
