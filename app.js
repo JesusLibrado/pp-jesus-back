@@ -3,7 +3,7 @@ require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var authenticate = require('./middlewares/authenticate');
+var authorization = require('./middlewares/authorize');
 
 var port = process.env.PORT || 3000;
 var app = express();
@@ -16,7 +16,7 @@ var authRouter = require('./routes/auth');
 var apiRouter = require('./routes/api');
 
 app.use('/auth', authRouter);
-app.use('/api', authenticate, apiRouter);
+app.use('/api', authorization, apiRouter);
 
 app.listen(port, ()=>{
     console.log("Server running on port: %s", port);

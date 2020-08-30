@@ -1,6 +1,11 @@
 POST http://localhost:3000/auth
 content-type: application/json
 
+{
+    "code": "29ag20",
+    "name": "Pedro"
+}
+
 ### 
 
 POST http://localhost:3000/api/new
@@ -9,3 +14,4 @@ content-type: application/json
 ###
 
 GET http://localhost:3000/api/search?name=asdsad
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4NzY1NzA3LCJleHAiOjE2MDAyNTc4NTJ9.RDS6nzwdtAZBzro0KTh7AFyjwkFC91mdls6aFqmG4cQ
