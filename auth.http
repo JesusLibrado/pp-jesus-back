@@ -1,0 +1,11 @@
+POST http://localhost:3000/auth
+content-type: application/json
+
+### 
+
+POST http://localhost:3000/api/new
+content-type: application/json
+
+###
+
+GET http://localhost:3000/api/search?name=asdsad
