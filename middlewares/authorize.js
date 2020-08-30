@@ -5,7 +5,10 @@ function authorize(req, res, next){
     if(authorization){
         let token = authorization.split(' ')[1];
         jwt.verify(token, 'secret', (err, {code, name})=>{
-            if(err) return res.status(400).end();
+            if(err){
+                console.log(err);
+                return res.status(400).end();   
+            }
             console.log(name);
             next();
         });
