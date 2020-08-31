@@ -4,12 +4,11 @@ function authorize(req, res, next){
     let authorization = req.headers.authorization;
     if(authorization){
         let token = authorization.split(' ')[1];
-        jwt.verify(token, 'secret', (err, {code, name})=>{
+        jwt.verify(token, 'secret', (err, data)=>{
             if(err){
-                console.log(err);
-                return res.status(400).end();   
+                next(err);
             }
-            console.log(name);
+            console.log(data);
             next();
         });
     }else{

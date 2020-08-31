@@ -3,6 +3,12 @@ const Mongoose = require('mongoose');
 const newSchema = new Mongoose.Schema({
     name: {
         type: String,
+        validate: {
+            validator: function(v){
+                return !(/\d+/.test(v));
+            },
+            message: props => `${props.value} must not have numbers`
+        },
         required: [true, 'Name is required']
     },
     password: {
@@ -39,7 +45,7 @@ const newSchema = new Mongoose.Schema({
     },
     genre: {
         type: String,
-        enum: ['MASCULINE', 'FEMENINE', 'NON-BINARY'],
+        enum: ['MALE', 'FEMALE', 'NON-BINARY'],
         required: true
     },
     hobby: {

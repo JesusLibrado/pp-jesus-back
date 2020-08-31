@@ -12,4 +12,8 @@ router.post('/', async function(req, res, next){
     res.json({token: token, expiration: duration});
 });
 
+router.post('/logout', async function(req, res, next){
+    res.json({msg: 'logged out'});
+});
+
 module.exports = router;
