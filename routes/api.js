@@ -5,7 +5,7 @@ var validator = require('../middlewares/validator');
 
 const User = require('../models/User');
 
-router.post('/new', validator, function(req, res, next){
+router.post('/new', validator.newUserDataTypes, function(req, res, next){
     console.log(req.body);
     var {name, email, phone, password, age, genre, hobby} = req.body;
     res.json({msg: req.originalUrl});
