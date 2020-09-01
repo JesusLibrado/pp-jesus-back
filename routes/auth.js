@@ -9,7 +9,7 @@ router.post('/', async function(req, res, next){
     let later = moment().endOf('hour');
     var duration = moment.duration(later.diff(now)).asMilliseconds();
     var token = await jwt.sign(req.body, 'secret', {expiresIn: duration});
-    res.json({token: token, expiration: duration});
+    res.json({token: token, expiration: duration, name, code});
 });
 
 router.post('/logout', async function(req, res, next){
