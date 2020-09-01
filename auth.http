@@ -13,5 +13,5 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3000/api/search?name=asdsad
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4NzY3Nzc3LCJleHAiOjE1OTg4Mjc3NzZ9.8h5y4t2eHLh7AKlEAlMgjX_bLYjmZuOtjUCIDNzjIA8
+GET http://localhost:3000/api/search?name=brian&age={$gte:20}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4ODQxMDA0LCJleHAiOjE2MDA2MzY1Mjl9.z9X75D7wsvS2ELxhpB2OtpZzIyMYAHMs0wrZ5lnA4so
