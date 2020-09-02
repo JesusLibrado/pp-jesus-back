@@ -32,6 +32,7 @@ module.exports = {
             next(Error("Field: age is not valid"));
         if(password.length < 8)
             next(Error("Field: password is not valid"));
+        req.body.name = name.toLowerCase();
         req.body.age = Number(age);
         req.body.password = crypto.createHmac('sha256', 'secret').update(password).digest('hex');
         next();

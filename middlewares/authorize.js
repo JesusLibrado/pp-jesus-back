@@ -8,7 +8,6 @@ function authorize(req, res, next){
             if(err){
                 next(err);
             }
-            console.log(data);
             next();
         });
     }else{

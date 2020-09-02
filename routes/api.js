@@ -15,9 +15,12 @@ router.post('/new', validator.newUserDataTypes, async function(req, res, next){
 });
 router.get('/search', async function(req, res, next){
     var query = req.query;
-    console.log(query);
+    let object = new Object();
+    if(query.name) object.name = query.name;
+    if(query.age) object.age = {$gte: query.age};
+    if(query.genre) object.genre = query.genre;
     try{
-        let users = await User.find();
+        let users = await User.find(object);
         res.json(users);
     }catch(err){
         next(err);
