@@ -2,7 +2,7 @@ POST http://localhost:3000/auth
 content-type: application/json
 
 {
-    "code": "29ag20",
+    "code": "222343",
     "name": "Pedro"
 }
 
