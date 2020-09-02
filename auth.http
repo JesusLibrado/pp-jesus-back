@@ -21,3 +21,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwI
 
 DELETE http://localhost:3000/api/5f4c5bc158049863ba366477
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4ODQxMDA0LCJleHAiOjE2MDA2MzY1Mjl9.z9X75D7wsvS2ELxhpB2OtpZzIyMYAHMs0wrZ5lnA4so
+
+### 
+
+POST http://localhost:3000/api/new
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4ODQxMDA0LCJleHAiOjE2MDA2MzY1Mjl9.z9X75D7wsvS2ELxhpB2OtpZzIyMYAHMs0wrZ5lnA4so
+content-type: application/json
+{
+    "age": "23",
+    "email": "adssad",
+    "genre": "MALE",
+    "hobby": "emailfake.com",
+    "name": "Pablo",
+    "password": "232342342323",
+    "phone": "2342342342
+}
