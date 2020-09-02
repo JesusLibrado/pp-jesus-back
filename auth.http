@@ -15,3 +15,9 @@ content-type: application/json
 
 GET http://localhost:3000/api/search?name=brian&age={$gte:20}
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4ODQxMDA0LCJleHAiOjE2MDA2MzY1Mjl9.z9X75D7wsvS2ELxhpB2OtpZzIyMYAHMs0wrZ5lnA4so
+
+
+### 
+
+DELETE http://localhost:3000/api/5f4c5bc158049863ba366477
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiMjlhZzIwIiwibmFtZSI6IlBlZHJvIiwiaWF0IjoxNTk4ODQxMDA0LCJleHAiOjE2MDA2MzY1Mjl9.z9X75D7wsvS2ELxhpB2OtpZzIyMYAHMs0wrZ5lnA4so

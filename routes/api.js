@@ -20,9 +20,14 @@ router.get('/search', async function(req, res, next){
         next(err);
     }
 });
-router.delete('/:id', function(req, res, next){
-    console.log(req.params);
-    res.json({msg: req.originalUrl});
+router.delete('/:id', async function(req, res, next){
+    var {id} = req.params;
+    try{
+        User.deleteOne({_id: id});
+        res.json({msg: "Eliminado exitosamente"});
+    }catch(err){
+        next(err);
+    }
 });
 
 module.exports = router;
