@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var cors = require('cors');
 var authorization = require('./middlewares/authorize');
+var errorHandler = require('./middlewares/errorHandler');
 
 var port = process.env.PORT || 3000;
 var app = express();
@@ -22,7 +23,7 @@ var apiRouter = require('./routes/api');
 
 app.use('/auth', authRouter);
 app.use('/api', authorization, apiRouter);
-
+app.use(errorHandler);
 
 
 
