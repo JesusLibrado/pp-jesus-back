@@ -5,10 +5,13 @@ var validator = require('../middlewares/validator');
 
 const User = require('../models/User');
 
-router.post('/new', validator.newUserDataTypes, function(req, res, next){
-    console.log(req.body);
-    var {name, email, phone, password, age, genre, hobby} = req.body;
-    res.json({msg: req.originalUrl});
+router.post('/new', validator.newUserDataTypes, async function(req, res, next){
+    try{
+        let user = await User.create(req.body);
+        res.json(user);
+    }catch(err){
+        next(err);
+    }
 });
 router.get('/search', async function(req, res, next){
     var query = req.query;
@@ -23,7 +26,7 @@ router.get('/search', async function(req, res, next){
 router.delete('/:id', async function(req, res, next){
     var {id} = req.params;
     try{
-        User.deleteOne({_id: id});
+        await User.deleteOne({_id: id});
         res.json({msg: "Eliminado exitosamente"});
     }catch(err){
         next(err);

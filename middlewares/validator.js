@@ -1,3 +1,5 @@
+var crypto = require('crypto');
+
 module.exports = {
     async signInCredentials (req, res, next){
         var {code, name} = req.body;
@@ -19,7 +21,19 @@ module.exports = {
         
     },
     async newUserDataTypes (req, res, next){
-        console.log("newUserDataTypes");
+        var {name, email, phone, password, age, genre, hobby} = req.body;
+        if(name.match(/\d+/) > 0)
+            next(Error("Field: name must not have numbers"));
+        if(email.match(/[\w\d\.]+(@)[\w]+.\w{2,4}.\w{2,3}/)<1)
+            next(Error("Field: email is not valid"));
+        if(phone.length != 10 || phone.match(/\d{10}/) < 1)
+            next(Error("Field: phone is not valid"));
+        if(age.match(/\d{1,3}/) < 1)
+            next(Error("Field: age is not valid"));
+        if(password.length < 8)
+            next(Error("Field: password is not valid"));
+        req.body.age = Number(age);
+        req.body.password = crypto.createHmac('sha256', 'secret').update(password).digest('hex');
         next();
     }
 };
